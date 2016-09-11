@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "WXApi.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <WXApiDelegate>
 
 @end
 
@@ -16,8 +17,58 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Description就按照你自己的来写吧
+    [WXApi registerApp:@"wxb4ba3c02aa476ea1"
+       withDescription:@"WeChatPay"];
+    
     return YES;
+}
+
+- (void)onResp:(BaseResp *)resp {
+    
+    if ([resp isKindOfClass:[PayResp class]]) {
+        
+        NSString *stringMessage = @"支付结果";
+        NSString *stringTitle  = @"支付结果";
+        
+        switch (resp.errCode) {
+            case WXSuccess:
+                
+                stringMessage = @"支付结果: 成功!";
+                
+                NSLog(@"支付成功 - PaySuccess, retCode = %d", resp.errCode);
+                
+                break;
+            default:
+                
+                stringMessage = [NSString stringWithFormat:@"支付结果: 失败!, retcode = %d, retstr = %@", resp.errCode, resp.errStr];
+                
+                break;
+        }
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:stringTitle
+                                                            message:stringMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"好的"
+                                                  otherButtonTitles:nil, nil];
+        
+        [alertView show];
+    }
+}
+
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url {
+    
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    return [WXApi handleOpenURL:url delegate:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

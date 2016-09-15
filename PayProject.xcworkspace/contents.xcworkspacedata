@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AliPay-Objective-C/AliPay-Objective-C.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:WeChatPay-Objective-C/WeChatPay-Objective-C.xcodeproj">
    </FileRef>
 </Workspace>

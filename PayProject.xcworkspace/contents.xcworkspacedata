@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ApplePay-Objective-C/ApplePay-Objective-C.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UnionPay-Objective-C/UnionPay-Objective-C.xcodeproj">
    </FileRef>
    <FileRef

@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A40BCC641DA1344700DE9B91 /* ApplePay-Objective-C.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ApplePay-Objective-C.entitlements"; sourceTree = "<group>"; };
 		A42C04D41D98327600A73A0C /* ApplePay-Objective-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ApplePay-Objective-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42C04D81D98327600A73A0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A42C04DA1D98327600A73A0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		A42C04D61D98327600A73A0C /* ApplePay-Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				A40BCC641DA1344700DE9B91 /* ApplePay-Objective-C.entitlements */,
 				A42C04DA1D98327600A73A0C /* AppDelegate.h */,
 				A42C04DB1D98327600A73A0C /* AppDelegate.m */,
 				A42C04DD1D98327600A73A0C /* ViewController.h */,
@@ -207,6 +209,12 @@
 				TargetAttributes = {
 					A42C04D31D98327600A73A0C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = C23M9EJC5L;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
 					};
 					A42C04EC1D98327600A73A0C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -415,9 +423,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ApplePay-Objective-C/ApplePay-Objective-C.entitlements";
 				INFOPLIST_FILE = "ApplePay-Objective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Pay.ApplePay-Objective-C";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pay.applepay.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -426,9 +435,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ApplePay-Objective-C/ApplePay-Objective-C.entitlements";
 				INFOPLIST_FILE = "ApplePay-Objective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Pay.ApplePay-Objective-C";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pay.applepay.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -498,6 +508,7 @@
 				A42C05031D98327600A73A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A42C05041D98327600A73A0C /* Build configuration list for PBXNativeTarget "ApplePay-Objective-CTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +517,7 @@
 				A42C05061D98327600A73A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A42C05071D98327600A73A0C /* Build configuration list for PBXNativeTarget "ApplePay-Objective-CUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +526,7 @@
 				A42C05091D98327600A73A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

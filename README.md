@@ -7,7 +7,7 @@
 
 银联支付说明文档: **[银联支付](https://cainrun.github.io/14740149724404.html)**
 
-Apple Pay说明文档:
+Apple Pay说明文档: **[Apple Pay](https://cainrun.github.io/14747805717408.html)**
 
 ---
 ### 更新时间
